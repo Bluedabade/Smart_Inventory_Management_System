@@ -1,6 +1,6 @@
 def sequential_search_by_name(products, keyword):
     result = []
-    keyword = keyword.lower()
+    keyword = keyword.lower().strip()
 
     for product in products:
         if keyword in product["name"].lower():

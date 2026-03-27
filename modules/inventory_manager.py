@@ -34,3 +34,21 @@ def delete_product(products, product_id):
 
 def get_product_by_id_hash(product_table, product_id):
     return product_table.get(product_id, None)
+
+def replace_category_in_products(products, old_category, new_category):
+    for product in products:
+        if product["category"] == old_category:
+            product["category"] = new_category
+
+
+def category_in_use(products, category):
+    for product in products:
+        if product["category"] == category:
+            return True
+    return False
+
+
+def remove_category_from_products(products, category):
+    for product in products:
+        if product["category"] == category:
+            product["category"] = ""
