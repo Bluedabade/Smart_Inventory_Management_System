@@ -17,7 +17,11 @@ categories = st.session_state.categories
 main_categories = get_main_categories(categories)
 
 with st.form("add_product_form"):
-    product_id = st.text_input("รหัสสินค้า")
+    product_id = st.text_input(
+    "รหัสสินค้า",
+    placeholder="เช่น P001"
+)
+    st.info("กรุณากรอกรหัสสินค้าในรูปแบบ P001, P002, P003 และห้ามซ้ำกับรหัสเดิมในระบบ")
     name = st.text_input("ชื่อสินค้า")
     price = st.number_input("ราคา", min_value=0.0, format="%.2f")
     quantity = st.number_input("จำนวนคงเหลือ", min_value=0, step=1)
